@@ -58,6 +58,11 @@ FLAG: 035db21c881520061c53e0536e44f815
 nmap -sC -sV -oN dancing_nmap.txt 10.129.142.29
 ```
 
+**EXPOSED PORT (SERVICE)**:<br>
+135 (msrpc),<br>
+139 (netbios-ssn),<br>
+445 (microsoft-ds)
+
 To list the smb shares:
 ```
 smbclient -L 10.129.142.29
