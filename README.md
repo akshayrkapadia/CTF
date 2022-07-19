@@ -1,5 +1,5 @@
 # CTF-Boxes
-My notes for each CTF Box box I crack on TryHackMe.com and HackTheBox.com
+My notes for each CTF box I crack on TryHackMe.com and HackTheBox.com
 
 TryHackMe:<br>
 [Basic Penetration Testing Box](./TryHackMe/BasicPenetrationTestingBox/BasicPenetrationTestingBox.md)<br>
