@@ -1,6 +1,9 @@
-# TryHackMe
-My notes for each TryHackMe box I attempt
+# CTF-Boxes
+My notes for each CTF Box box I crack on TryHackMe.com and HackTheBox.com
 
-BOXES:<br>
-[Basic Penetration Testing Box](./BasicPenetrationTestingBox/BasicPenetrationTestingBox.md)<br>
-[Root Me Box](./RootMeBox/RootMeBox.md)<br>
+TryHackMe:<br>
+[Basic Penetration Testing Box](./TryHackMe/BasicPenetrationTestingBox/BasicPenetrationTestingBox.md)<br>
+[Root Me Box](./TryHackMe/RootMeBox/RootMeBox.md)<br>
+
+HackTheBox:<br>
+[Starting Point](./HackTheBox/StartingPointBoxes/StartingPointBoxes.md)<br>
