@@ -6,4 +6,4 @@ TryHackMe:<br>
 [Root Me Box](./TryHackMe/RootMeBox/RootMeBox.md)<br>
 
 HackTheBox:<br>
-[Starting Point Boxes](./HackTheBox/StartingPointBoxes/StartingPointBoxes.md)<br>
+[Starting Point Boxes](./HackTheBox/StartingPointBoxes/Tier_0/StartingPointBoxes_Tier_0.md)<br>
