@@ -1,0 +1,21 @@
+# Nmap 7.92 scan initiated Tue Jul 19 12:00:35 2022 as: nmap -sC -sV -oN dancing_nmap.txt 10.129.142.29
+Nmap scan report for 10.129.142.29
+Host is up (0.055s latency).
+Not shown: 997 closed tcp ports (conn-refused)
+PORT    STATE SERVICE       VERSION
+135/tcp open  msrpc         Microsoft Windows RPC
+139/tcp open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp open  microsoft-ds?
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2022-07-19T20:01:37
+|_  start_date: N/A
+|_clock-skew: 4h00m47s
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Jul 19 12:00:53 2022 -- 1 IP address (1 host up) scanned in 18.09 seconds
