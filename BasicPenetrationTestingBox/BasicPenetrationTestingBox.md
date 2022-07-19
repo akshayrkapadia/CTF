@@ -4,13 +4,21 @@
 **TOOLS USED**: nmap, dirbuster, enum4linux, hydra, linpeas, John the Ripper
 
 **nmap**: network exploration tool and security / port scanner<br>
+
 ```
 nmap [Scan Type...] [Options] {target specification}
 ```
+
 Scan Types:<br>
 -Ss [DEFAULT] TCP SYN Scan (Doesn't open full TCP connection)<br>
 -St TCP Scan (Opens full TCP connection)<br>
 -Su UDP Scan<br>
+
+To find all devices connected to a network:
+
+```
+nmap -sL x.x.x.x/24
+```
 
 **dirbuster**: web content scanner
 
@@ -63,7 +71,7 @@ nmap -sC -sV -oN nmap.txt 10.10.19.208
 -oN: output scan in normal to given filename<br>
 
 
-![nmap](./nmap)
+![nmap](./imgs/nmap.png)
 
 
 **EXPOSED PORT (SERVICE)**:<br>
