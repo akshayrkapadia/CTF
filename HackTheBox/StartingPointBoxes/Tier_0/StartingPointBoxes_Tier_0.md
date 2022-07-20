@@ -33,13 +33,16 @@ FLAG: b40abdfe23665f766f9c61ecba8a4c19
 ```
 nmap -sC -sV -oN nmap.txt 10.129.98.220
 ```
+**EXPOSED PORT (SERVICE)**: 21 (ftp)
 
 Anonymous ftp login was enabled
+
 ```
 ftp 10.129.98.220
 ```
+
 user: anonymous<br>
-passwd: anonymous<br>
+password: anonymous<br>
 
 ```
 get flag.txt
@@ -63,6 +66,7 @@ nmap -sC -sV -oN dancing_nmap.txt 10.129.142.29
 445 (microsoft-ds)
 
 To list the smb shares:
+
 ```
 smbclient -L 10.129.142.29
 ```
@@ -79,7 +83,7 @@ FLAG: 5f61c10dffbc77a704d76016a22f1664
 
 --------------------------------------------------------------------
 
-## REDEEMER
+## REDEEMER BOX
 
 **IP Address**: 10.129.34.251
 
