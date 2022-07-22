@@ -92,7 +92,7 @@ nmap -sC -p- -T5 -oN redeemer_nmap.txt 10.129.34.251
 ```
 
 -p-: all ports
--T5: speed up scan because -p- is slow
+-T5: speed up scan because -p- is slow (T0 slowest but most evasive, T5 quickest but aggressive)
 
 **EXPOSED PORT (SERVICE)**: 6379 (redis)
 

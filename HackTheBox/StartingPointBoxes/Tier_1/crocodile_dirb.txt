@@ -1,0 +1,38 @@
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.129.54.45
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/dirb/wordlists/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Extensions:              php,html
+[+] Timeout:                 10s
+===============================================================
+2022/07/21 21:06:32 Starting gobuster in directory enumeration mode
+===============================================================
+/.hta.php             (Status: 403) [Size: 277]
+/.hta.html            (Status: 403) [Size: 277]
+/.htaccess            (Status: 403) [Size: 277]
+/.hta                 (Status: 403) [Size: 277]
+/.htpasswd            (Status: 403) [Size: 277]
+/.htaccess.html       (Status: 403) [Size: 277]
+/.htpasswd.php        (Status: 403) [Size: 277]
+/.htaccess.php        (Status: 403) [Size: 277]
+/.htpasswd.html       (Status: 403) [Size: 277]
+/assets               (Status: 301) [Size: 313] [--> http://10.129.54.45/assets/]
+/config.php           (Status: 200) [Size: 0]                                    
+/css                  (Status: 301) [Size: 310] [--> http://10.129.54.45/css/]   
+/dashboard            (Status: 301) [Size: 316] [--> http://10.129.54.45/dashboard/]
+/fonts                (Status: 301) [Size: 312] [--> http://10.129.54.45/fonts/]    
+/index.html           (Status: 200) [Size: 58565]                                   
+/index.html           (Status: 200) [Size: 58565]                                   
+/js                   (Status: 301) [Size: 309] [--> http://10.129.54.45/js/]       
+/login.php            (Status: 200) [Size: 1577]                                    
+/logout.php           (Status: 302) [Size: 0] [--> login.php]                       
+/server-status        (Status: 403) [Size: 277]                                     
+===============================================================
+2022/07/21 21:07:18 Finished
+===============================================================
