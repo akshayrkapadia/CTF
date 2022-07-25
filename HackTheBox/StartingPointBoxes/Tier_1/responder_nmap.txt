@@ -1,0 +1,15 @@
+# Nmap 7.80 scan initiated Sun Jul 24 18:54:30 2022 as: nmap -sV -sC -p- -oN responder_nmap.txt 10.129.55.209
+Nmap scan report for unika.htb (10.129.55.209)
+Host is up (0.032s latency).
+Not shown: 65533 filtered ports
+PORT     STATE SERVICE VERSION
+80/tcp   open  http    Apache httpd 2.4.52 ((Win64) OpenSSL/1.1.1m PHP/8.1.1)
+|_http-server-header: Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/8.1.1
+|_http-title: Unika
+5985/tcp open  http    Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Not Found
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sun Jul 24 18:56:46 2022 -- 1 IP address (1 host up) scanned in 135.23 seconds
