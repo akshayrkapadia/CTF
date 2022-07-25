@@ -2,6 +2,7 @@
 My notes for each CTF box I crack on TryHackMe.com and HackTheBox.com
 
 TryHackMe:<br>
+[Mr. Robot CTF Box (IN PROGRESS 1/3)](./TryHackMe/MrRobotCTFBox/MrRobotCTFBox.md)<br>
 [Basic Penetration Testing Box](./TryHackMe/BasicPenetrationTestingBox/BasicPenetrationTestingBox.md)<br>
 [Root Me Box](./TryHackMe/RootMeBox/RootMeBox.md)<br>
 
