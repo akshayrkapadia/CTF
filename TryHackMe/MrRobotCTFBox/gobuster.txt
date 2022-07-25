@@ -1,0 +1,62 @@
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://10.10.3.80
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/dirb/wordlists/common.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Timeout:                 10s
+===============================================================
+2022/07/25 16:08:11 Starting gobuster in directory enumeration mode
+===============================================================
+/.hta                 (Status: 403) [Size: 213]
+/.htaccess            (Status: 403) [Size: 218]
+/.htpasswd            (Status: 403) [Size: 218]
+/0                    (Status: 301) [Size: 0] [--> http://10.10.3.80/0/]
+/admin                (Status: 301) [Size: 232] [--> http://10.10.3.80/admin/]
+/atom                 (Status: 301) [Size: 0] [--> http://10.10.3.80/feed/atom/]
+/audio                (Status: 301) [Size: 232] [--> http://10.10.3.80/audio/]  
+/blog                 (Status: 301) [Size: 231] [--> http://10.10.3.80/blog/]   
+/css                  (Status: 301) [Size: 230] [--> http://10.10.3.80/css/]    
+/dashboard            (Status: 302) [Size: 0] [--> http://10.10.3.80/wp-admin/] 
+/favicon.ico          (Status: 200) [Size: 0]                                   
+/feed                 (Status: 301) [Size: 0] [--> http://10.10.3.80/feed/]     
+/image                (Status: 301) [Size: 0] [--> http://10.10.3.80/image/]    
+/images               (Status: 301) [Size: 233] [--> http://10.10.3.80/images/] 
+/Image                (Status: 301) [Size: 0] [--> http://10.10.3.80/Image/]    
+/index.html           (Status: 200) [Size: 1077]                                
+/index.php            (Status: 301) [Size: 0] [--> http://10.10.3.80/]          
+/intro                (Status: 200) [Size: 516314]                              
+/js                   (Status: 301) [Size: 229] [--> http://10.10.3.80/js/]     
+/license              (Status: 200) [Size: 309]                                 
+/login                (Status: 302) [Size: 0] [--> http://10.10.3.80/wp-login.php]
+/page1                (Status: 301) [Size: 0] [--> http://10.10.3.80/]            
+/phpmyadmin           (Status: 403) [Size: 94]                                    
+/readme               (Status: 200) [Size: 64]                                    
+/rdf                  (Status: 301) [Size: 0] [--> http://10.10.3.80/feed/rdf/]   
+/robots               (Status: 200) [Size: 41]                                    
+/robots.txt           (Status: 200) [Size: 41]                                    
+/rss                  (Status: 301) [Size: 0] [--> http://10.10.3.80/feed/]       
+/rss2                 (Status: 301) [Size: 0] [--> http://10.10.3.80/feed/]       
+/sitemap              (Status: 200) [Size: 0]                                     
+/sitemap.xml          (Status: 200) [Size: 0]                                     
+/video                (Status: 301) [Size: 232] [--> http://10.10.3.80/video/]    
+/wp-admin             (Status: 301) [Size: 235] [--> http://10.10.3.80/wp-admin/] 
+/wp-content           (Status: 301) [Size: 237] [--> http://10.10.3.80/wp-content/]
+/wp-config            (Status: 200) [Size: 0]                                      
+/wp-includes          (Status: 301) [Size: 238] [--> http://10.10.3.80/wp-includes/]
+/wp-cron              (Status: 200) [Size: 0]                                       
+/wp-load              (Status: 200) [Size: 0]                                       
+/wp-links-opml        (Status: 200) [Size: 227]                                     
+/wp-login             (Status: 200) [Size: 2592]                                    
+/wp-mail              (Status: 500) [Size: 3064]                                    
+/wp-settings          (Status: 500) [Size: 0]                                       
+/wp-signup            (Status: 302) [Size: 0] [--> http://10.10.3.80/wp-login.php?action=register]
+/xmlrpc               (Status: 405) [Size: 42]                                                    
+/xmlrpc.php           (Status: 405) [Size: 42]                                                    
+===============================================================
+2022/07/25 16:39:57 Finished
+===============================================================

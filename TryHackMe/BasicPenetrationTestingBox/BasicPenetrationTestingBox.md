@@ -1,4 +1,5 @@
 # Basic Penetration Testing Box
+
 --------------------------------------------------------------------
 
 **TOOLS USED**: nmap, dirbuster, enum4linux, hydra, linpeas, John the Ripper
@@ -48,15 +49,15 @@ john [options] password-files
 ```
 
 --------------------------------------------------------------------
+
 ## GIVEN INFO
 
 
 **IP Address**: 10.10.19.208
 
 --------------------------------------------------------------------
+
 ## PROCEDURE
-
-
 
 ### 1. FIND EXPOSED SERVICES
 
@@ -83,6 +84,7 @@ nmap -sC -sV -oN nmap.txt 10.10.19.208
   8080 (http)<br>
 
 ----------------------------------
+
 ## 2. FIND HIDDEN DIR ON WEB SERVER
 
 
@@ -97,6 +99,7 @@ dirb http://10.10.19.208
 **HIDDEN DIR**: /development
 
 ----------------------------------
+
 ## 3. GET USERNAME & PASSWORD
 
 
@@ -126,6 +129,7 @@ hydra -l jan -P /usr/share/wordlists/rockyou.txt.gz ssh://10.10.19.208
 **PASSWORD**: armando
 
 ----------------------------------
+
 ## 4. FIND PRIVILEGE ESCALATION VECTORS
 
 
@@ -162,6 +166,7 @@ john 4john.txt
 **PASSWORD**: beeswax
 
 ----------------------------------
+
 ## 5. FINAL PASSWORD
 
 
