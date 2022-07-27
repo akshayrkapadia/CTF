@@ -18,6 +18,7 @@ Scan Types:<br>
 -Sc script scan
 -sV probe for service/version info
 -oN save output to file
+-p- scan all ports
 
 To find all devices connected to a network:
 
