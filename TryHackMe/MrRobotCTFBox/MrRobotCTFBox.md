@@ -2,7 +2,7 @@
 
 --------------------------------------------------------------------
 
-**TOOLS USED**: nmap, dirbuster
+**TOOLS USED**: nmap, gobuster, Burp Suite, Hydra, WPScan, netcat, john
 
 **nmap**: network exploration tool and security / port scanner<br>
 
@@ -15,16 +15,68 @@ Scan Types:<br>
 -St TCP Scan (Opens full TCP connection)<br>
 -Su UDP Scan<br>
 
+-Sc script scan
+-sV probe for service/version info
+-oN save output to file
+
 To find all devices connected to a network:
 
 ```
 nmap -sL x.x.x.x/24
 ```
 
-**dirbuster**: web content scanner
+**gobuster**: tool to brute force URIs (dirs, files, dns subdomains)
 
 ```
-dirb <url_base> <url_base> [<wordlist_file(s)>] [options]
+gobuster [command]
+```
+
+dir mode
+-u url
+-w  wordlist
+
+**Burp Suite**: tool to test web application security
+
+**hydra**: network logon cracker
+
+```
+hydra
+       [[[-l LOGIN|-L FILE] [-p PASS|-P FILE|-x OPT -y]] | [-C FILE]]
+       [-e nsr] [-u] [-f|-F] [-M FILE] [-o FILE] [-b FORMAT]
+       [-t TASKS] [-T TASKS] [-w TIME] [-W TIME] [-m OPTIONS] [-s PORT]
+       [-c TIME] [-S] [-O] [-4|6] [-I] [-vV] [-d]
+       server service [OPTIONS]
+```
+
+http-post-form "PAGE:PARAMETER=^HYDRA_VALUE^:FAILURE STRING"
+-t multi threading
+
+**WPScan**: word press enumeration tool
+
+```
+wpscan [options]
+```
+
+-U username
+-P password
+--url
+
+**netcat**: networking utility for reading and writing to network connections using TCP/IP
+
+```
+nc [-options] hostname port[s] [ports] ...
+nc -l -p port [-options] [hostname] [port]
+```
+
+-n suppress name/port resolutions
+-l listen mode
+-v verbose
+-p port
+
+**john**: tool to crack weak passwords
+
+```
+john [options] password-files
 ```
 
 --------------------------------------------------------------------
@@ -40,7 +92,7 @@ dirb <url_base> <url_base> [<wordlist_file(s)>] [options]
 
 ### 1. FIND FLAG 1
 
-**TOOLS**: nmap
+**TOOLS**: nmap, gobuster
 
 ```
 nmap -sC -sV -oN nmap.txt 10.6.40.234
