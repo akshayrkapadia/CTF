@@ -153,7 +153,7 @@ FLAG: b91ccec3305e98240082d4474b848528
 
 ## OOPSIE BOX
 
-**TOOLS USED**: nmap, Burp Suite, netcat
+**TOOLS USED**: nmap, Burp Suite, netcat, gobuster
 
 **IP Address**: 10.129.15.32
 
@@ -236,8 +236,10 @@ PERMISSIONS: -rwsr-xr-- 1 root bugtracker 8792 Jan 25  2020 /usr/bin/bugtracker
 
 root bit is set so file will always run as root.<br>
 
-bugtracker program gives this error when bug not found:<br>
-cat: /root/reports/32322322323: No such file or directory<br>
+bugtracker program gives this error when bug not found:
+```
+cat: /root/reports/32322322323: No such file or directory
+```
 We can exploit the cat command because it is run insecurely
 
 ```
