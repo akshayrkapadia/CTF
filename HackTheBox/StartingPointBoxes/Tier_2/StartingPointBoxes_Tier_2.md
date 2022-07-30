@@ -2,7 +2,7 @@
 
 --------------------------------------------------------------------
 
-**TOOLS USED**: nmap, smbclient, impacket, netcat, winPEAS, Burp Suite
+**TOOLS USED**: nmap, smbclient, impacket, netcat, winPEAS, Burp Suite, gobuster
 
 **nmap**: network exploration tool and security / port scanner<br>
 
@@ -49,6 +49,14 @@ nc -l -p port [-options] [hostname] [port]
 -p port
 
 **winpeas**: script that searches for possible paths to escalate privileges on windows hosts
+
+**Burp Suite**: tool to test web application security
+
+**gobuster**: tool to brute force URIs (dirs, files, dns subdomains)
+
+```
+gobuster [command]
+```
 
 --------------------------------------------------------------------
 
