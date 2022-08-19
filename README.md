@@ -5,6 +5,8 @@ TryHackMe:<br>
 [Mr. Robot CTF Box](./TryHackMe/MrRobotCTFBox/MrRobotCTFBox.md)<br>
 [Basic Penetration Testing Box](./TryHackMe/BasicPenetrationTestingBox/BasicPenetrationTestingBox.md)<br>
 [Root Me Box](./TryHackMe/RootMeBox/RootMeBox.md)<br>
+[Pickle Rick Box](./TryHackMe/PickleRickBox/PickleRickBox.md)<br>
+
 
 HackTheBox:<br>
 [Tier 0 Starting Point (4) Boxes](./HackTheBox/StartingPointBoxes/Tier_0/StartingPointBoxes_Tier_0.md)<br>
