@@ -4,10 +4,10 @@ My notes for each CTF challenge I complete on TryHackMe.com, HackTheBox.com, & P
 ## Offense
 
 **TryHackMe:**<br>
-[Mr. Robot CTF Box](./TryHackMe/Offense/MrRobotCTF/MrRobotCTF.md)<br>
-[Basic Penetration Testing Box](./TryHackMe/Offense/BasicPenetrationTesting/BasicPenetrationTesting.md)<br>
-[Root Me Box](./TryHackMe/Offense/RootMe/RootMe.md)<br>
-[Pickle Rick Box](./TryHackMe/Offense/PickleRick/PickleRick.md)<br>
+[Mr. Robot CTF](./TryHackMe/Offense/MrRobotCTF/MrRobotCTF.md)<br>
+[Basic Penetration Testing](./TryHackMe/Offense/BasicPenetrationTesting/BasicPenetrationTesting.md)<br>
+[Root Me](./TryHackMe/Offense/RootMe/RootMe.md)<br>
+[Pickle Rick](./TryHackMe/Offense/PickleRick/PickleRick.md)<br>
 
 
 **HackTheBox:**<br>
