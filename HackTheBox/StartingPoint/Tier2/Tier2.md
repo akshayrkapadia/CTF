@@ -1,4 +1,4 @@
-# TIER 2 STARTING POINT BOXES
+# TIER 2 STARTING POINT
 
 --------------------------------------------------------------------
 

@@ -1,4 +1,4 @@
-# Basic Penetration Testing Box
+# Basic Penetration Testing
 
 --------------------------------------------------------------------
 

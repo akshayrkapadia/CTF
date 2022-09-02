@@ -1,22 +1,27 @@
 # CTF-Boxes
 My notes for each CTF challenge I complete on TryHackMe.com, HackTheBox.com, & PicoCTF.org
 
-## Hacking
+## Offense
 
-TryHackMe:<br>
-[Mr. Robot CTF Box](./TryHackMe/MrRobotCTFBox/MrRobotCTFBox.md)<br>
-[Basic Penetration Testing Box](./TryHackMe/BasicPenetrationTestingBox/BasicPenetrationTestingBox.md)<br>
-[Root Me Box](./TryHackMe/RootMeBox/RootMeBox.md)<br>
-[Pickle Rick Box](./TryHackMe/PickleRickBox/PickleRickBox.md)<br>
+**TryHackMe:**<br>
+[Mr. Robot CTF Box](./TryHackMe/Offense/MrRobotCTF/MrRobotCTF.md)<br>
+[Basic Penetration Testing Box](./TryHackMe/Offense/BasicPenetrationTesting/BasicPenetrationTesting.md)<br>
+[Root Me Box](./TryHackMe/Offense/RootMe/RootMe.md)<br>
+[Pickle Rick Box](./TryHackMe/Offense/PickleRick/PickleRick.md)<br>
 
 
-HackTheBox:<br>
-[Tier 0 Starting Point (4) Boxes](./HackTheBox/StartingPointBoxes/Tier_0/StartingPointBoxes_Tier_0.md)<br>
-[Tier 1 Starting Point (4) Boxes](./HackTheBox/StartingPointBoxes/Tier_1/StartingPointBoxes_Tier_1.md)<br>
-[Tier 2 Starting Point (4) Boxes](./HackTheBox/StartingPointBoxes/Tier_2/StartingPointBoxes_Tier_2.md)<br>
+**HackTheBox:**<br>
+[Starting Point Tier 0](./HackTheBox/StartingPoint/Tier0/Tier0.md)<br>
+[Starting Point Tier 1](./HackTheBox/StartingPoint/Tier1/Tier1.md)<br>
+[Starting Point Tier 2](./HackTheBox/StartingPoint/Tier2/Tier2.md)<br>
+
+## Defense
+
+**TryHackMe:**<br>
+[Carnage](./TryHackMe/Defense/Carnage/Carnage.md)<br>
 
 
 ## Reverse Engineering
 
-PicoCTF:<br>
+**PicoCTF:**<br>
 [Bbbbloat](./PicoCTF/ReverseEngineering/Bbbbloat/Bbbbloat.md)<br>

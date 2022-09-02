@@ -1,4 +1,4 @@
-# Root Me Box
+# Root Me
 --------------------------------------------------------------------
 
 **TOOLS USED**: nmap, gobuster, netcat
