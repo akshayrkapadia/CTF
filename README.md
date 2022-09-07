@@ -8,7 +8,7 @@ My notes for each CTF challenge I complete on TryHackMe.com, HackTheBox.com, & P
 [Basic Penetration Testing](./TryHackMe/Offense/BasicPenetrationTesting/BasicPenetrationTesting.md)<br>
 [Root Me](./TryHackMe/Offense/RootMe/RootMe.md)<br>
 [Pickle Rick](./TryHackMe/Offense/PickleRick/PickleRick.md)<br>
-[Overpass](./TryHackMe/Offense/POverpass/Overpass.md)<br>
+[Overpass](./TryHackMe/Offense/Overpass/Overpass.md)<br>
 
 
 **HackTheBox:**<br>
