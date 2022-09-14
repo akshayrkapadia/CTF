@@ -1,10 +1,11 @@
 # BLACK BOX TESTING 2
 
 ## GIVEN   
-### MY IP ADDRESS
-192.32.59.2
+**MY IP ADDRESS**: 192.32.59.2
 
-### NMAP
+## PROCEDURE
+
+### RECON
 
 **OPEN PORTS**:<br>
 80 http (Apache 2.4.29 Web Server),<br>
@@ -18,6 +19,11 @@ Port 8000 is hosting a git repo<br>
 **FILE OF INTEREST**: http://online-calc.com:8000/.git/config
 
 ### GIT CREDENTIALS
+
+```
+curl http://online-calc.com:8000/.git/config
+```
+
 name = Jeremy McCarthy<br>
 email = jeremy@dummycorp.com<br>
 **password** = diamonds<br>
