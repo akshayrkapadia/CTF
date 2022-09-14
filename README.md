@@ -1,5 +1,5 @@
 # Capture The Flag (CTF)
-My notes for each CTF challenge I complete on TryHackMe.com, HackTheBox.com, & PicoCTF.org
+My notes for each CTF challenge I complete.
 
 ## Offense
 
