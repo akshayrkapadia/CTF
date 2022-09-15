@@ -1,0 +1,8 @@
+# BLACK BOX TESTING 1
+
+## GIVEN   
+**MY IP ADDRESS**: 
+
+## PROCEDURE
+
+### RECON
