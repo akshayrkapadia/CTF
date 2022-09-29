@@ -16,10 +16,6 @@ My notes for each CTF challenge I complete.
 [Starting Point Tier 1](./HackTheBox/StartingPoint/Tier1/Tier1.md)<br>
 [Starting Point Tier 2](./HackTheBox/StartingPoint/Tier2/Tier2.md)<br>
 
-**INE:**<br>
-[Black Box Testing 1](./INE/PenetrationTestingStudent/BlackBoxTesting/BlackBoxTesting1.md)<br>
-[Black Box Testing 2](./INE/PenetrationTestingStudent/BlackBoxTesting/BlackBoxTesting2.md)<br>
-
 ## Defense
 
 **TryHackMe:**<br>
