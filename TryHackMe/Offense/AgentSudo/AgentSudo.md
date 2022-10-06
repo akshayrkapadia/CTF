@@ -133,6 +133,8 @@ ssh james@10.10.207.89
 
 ![5.2](./imgs/5.2.png)
 
+**USER FLAG**: b03d975e8c92a7c04146cfa7a5a313c7
+
 ### 6. Privilege Escalation
 
 Run linpeas
