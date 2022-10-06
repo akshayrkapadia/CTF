@@ -9,6 +9,7 @@ My notes for each CTF challenge I complete.
 [Root Me](./TryHackMe/Offense/RootMe/RootMe.md)<br>
 [Pickle Rick](./TryHackMe/Offense/PickleRick/PickleRick.md)<br>
 [Overpass](./TryHackMe/Offense/Overpass/Overpass.md)<br>
+[Agent Sudo](./TryHackMe/Offense/AgentSudo/AgentSudo.md)<br>
 
 
 **HackTheBox:**<br>
