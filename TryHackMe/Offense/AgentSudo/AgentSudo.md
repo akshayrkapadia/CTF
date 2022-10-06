@@ -109,7 +109,7 @@ Open To_agentR.txt in zip file
 
 ![4.4](./imgs/4.4.png)
 
-Use Cyber Chef to decode QXJlYTUx<br>
+Use Cyber Chef to auto detect encoding algorithm<br>
 https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)&input=UVhKbFlUVXg
 
 ![4.5](./imgs/4.5.png)
