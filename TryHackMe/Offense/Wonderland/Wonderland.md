@@ -78,7 +78,7 @@ Inspect element on http://10.10.210.160/r/a/b/b/i/t/
 
 found potential ssh login
 
-**USERNAME**: alice
+**USERNAME**: alice<br>
 **PASSWORD**: HowDothTheLittleCrocodileImproveHisShiningTail
 
 ### 3. SSH
@@ -114,17 +114,21 @@ alice can run /usr/bin/python3.6 and /home/alice/walrus_and_the_carpenter.py as 
 Inspect python program
 
 imports library called random
+
 ![4.2](./imgs/4.2.png)
 
 Calls the choice() method at the end
+
 ![4.3](./imgs/4.3.png)
 
 Create new random.py file and test it out
+
 ![4.4](./imgs/4.4.png)
 
 We can put in our own code in random.py and run the original python program as user rabbit
 
 Modified random.py to spawn shell so when python program is run as rabbit it will create a shell for user rabbit
+
 ![4.5](./imgs/4.5.png)
 
 Run program as rabbit
@@ -208,7 +212,7 @@ Capabilities are granular escalated user privileges for certain programs<br>
 Perl has the capability to use the setuid function in order to become root
 
 Can also use this command to check capabilities<br>
-2 is standard error
+2 is standard error<br>
 2>/dev/null redirects stderr to /dev/null
 ```
 getcap -r / 2>/dev/null
