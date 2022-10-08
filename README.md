@@ -10,6 +10,7 @@ My notes for each CTF challenge I complete.
 [Pickle Rick](./TryHackMe/Offense/PickleRick/PickleRick.md)<br>
 [Overpass](./TryHackMe/Offense/Overpass/Overpass.md)<br>
 [Agent Sudo](./TryHackMe/Offense/AgentSudo/AgentSudo.md)<br>
+[Bounty Hacker](./TryHackMe/Offense/BountyHacker/BountyHacker.md)<br>
 
 
 **HackTheBox:**<br>
