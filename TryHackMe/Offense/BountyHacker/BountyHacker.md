@@ -17,7 +17,7 @@
 
 ### 1. RECON
 
--script SCRIPT: script scan<br>
+--script SCRIPT: script scan<br>
 -sV: probe open ports to determine service/version info<br>
 -oN OUTPUT_FILE: output results to given filename<br>
 ```
@@ -60,7 +60,7 @@ ftp anonymous@10.10.153.213
 
 locks.txt might be possible passwords
 
-### 3. Brute Force SSH
+### 3. BRUTE FORCE SSH
 
 Use hydra to brute force ssh login
 ```
@@ -76,7 +76,7 @@ hydra -l "lin" -P locks.txt ssh://10.10.153.213
 
 **USER FLAG**: THM{CR1M3_SyNd1C4T3}
 
-### 4. Privilege Escalation
+### 4. PRIVILEGE ESCALATION
 
 See sudo privileges for lin
 ```

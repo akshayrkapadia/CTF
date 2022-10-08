@@ -17,7 +17,7 @@
 
 ### 1. RECON
 
--script SCRIPT: script scan<br>
+--script SCRIPT: script scan<br>
 -sV: probe open ports to determine service/version info<br>
 -oN OUTPUT_FILE: output results to given filename<br>
 -p-: scan all ports
@@ -36,7 +36,7 @@ nmap --script vuln -sV -p- -oN nmap.txt 10.10.207.89
   39873,<br>
   42206
 
-### 2. Access Hidden Pages
+### 2. ACCESS HIDDEN PAGES
 
 ![2.1](./imgs/2.1.png)
 
@@ -57,7 +57,7 @@ Codename: C
 
 chris has weak password so we can try to brute force his ftp login
 
-### 3. Brute Force FTP
+### 3. BRUTE FORCE FTP
 
 ```
 hydra -l "chris" -P /usr/share/wordlists/rockyou.txt.gz ftp://10.10.207.89
@@ -79,7 +79,7 @@ get cute-alien.jpg
 get cutie.png
 ```
 
-### 4. Crack ZIP Hash
+### 4. CRACK ZIP HASH
 
 ```
 binwalk cute-alien.jpg
@@ -116,7 +116,7 @@ https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,fal
 
 QXJlYTUx = Area51
 
-### 5. Extract Stenography Data
+### 5. EXTRACT STEGANOGRAPHY DATA
 
 ```
 steghide extract -sf cute-alien.jpg
@@ -135,7 +135,7 @@ ssh james@10.10.207.89
 
 **USER FLAG**: b03d975e8c92a7c04146cfa7a5a313c7
 
-### 6. Privilege Escalation
+### 6. PRIVILEGE ESCALATION
 
 Run linpeas
 ```
