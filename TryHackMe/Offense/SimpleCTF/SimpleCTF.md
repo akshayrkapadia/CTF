@@ -100,7 +100,7 @@ hashid hash
 
 Hash type could be md5
 
--a ATTACK_MODE (0 = straight)
+-a ATTACK_MODE (0 = straight)<br>
 -m HASH_TYPE (20 = md5(\$salt.\$pass))
 ```
 hashcat -a0 -m20 hash /usr/share/wordlists/rockyou.txt
