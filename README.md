@@ -12,6 +12,7 @@ My notes for each CTF challenge I complete.
 [Agent Sudo](./TryHackMe/Offense/AgentSudo/AgentSudo.md)<br>
 [Bounty Hacker](./TryHackMe/Offense/BountyHacker/BountyHacker.md)<br>
 [Wonderland](./TryHackMe/Offense/Wonderland/Wonderland.md)<br>
+[Simple CTF](./TryHackMe/Offense/SimpleCTF/SimpleCTF.md)<br>
 
 
 **HackTheBox:**<br>
