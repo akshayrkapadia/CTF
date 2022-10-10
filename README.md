@@ -14,12 +14,13 @@ My notes for each CTF challenge I complete.
 [Wonderland](./TryHackMe/Offense/Wonderland/Wonderland.md)<br>
 [Simple CTF](./TryHackMe/Offense/SimpleCTF/SimpleCTF.md)<br>
 [Lazy Admin](./TryHackMe/Offense/LazyAdmin/LazyAdmin.md)<br>
-
+[Brooklyn Nine Nine](./TryHackMe/Offense/LazyAdmin/LazyAdmin.md)<br>
 
 **HackTheBox:**<br>
 [Starting Point Tier 0](./HackTheBox/StartingPoint/Tier0/Tier0.md)<br>
 [Starting Point Tier 1](./HackTheBox/StartingPoint/Tier1/Tier1.md)<br>
 [Starting Point Tier 2](./HackTheBox/StartingPoint/Tier2/Tier2.md)<br>
+
 
 ## Defense
 
