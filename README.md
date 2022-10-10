@@ -13,6 +13,7 @@ My notes for each CTF challenge I complete.
 [Bounty Hacker](./TryHackMe/Offense/BountyHacker/BountyHacker.md)<br>
 [Wonderland](./TryHackMe/Offense/Wonderland/Wonderland.md)<br>
 [Simple CTF](./TryHackMe/Offense/SimpleCTF/SimpleCTF.md)<br>
+[Lazy Admin](./TryHackMe/Offense/LazyAdmin/LazyAdmin.md)<br>
 
 
 **HackTheBox:**<br>
