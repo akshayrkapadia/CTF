@@ -110,7 +110,7 @@ hashcat -a0 -m20 hash /usr/share/wordlists/rockyou.txt
 
 **PASSWORD**: secret
 
-### SSH LOGIN
+### 4. SSH LOGIN
 
 Log into SSH with found credentials
 ```
@@ -129,7 +129,7 @@ sudo -l
 
 Can run vim as root
 
-### PRIVILEGE ESCALATION
+### 5. PRIVILEGE ESCALATION
 
 From https://gtfobins.github.io/gtfobins/vim/#sudo
 ```
