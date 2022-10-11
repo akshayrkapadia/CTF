@@ -15,6 +15,7 @@ My notes for each CTF challenge I complete.
 [Simple CTF](./TryHackMe/Offense/SimpleCTF/SimpleCTF.md)<br>
 [Lazy Admin](./TryHackMe/Offense/LazyAdmin/LazyAdmin.md)<br>
 [Brooklyn Nine Nine](./TryHackMe/Offense/LazyAdmin/LazyAdmin.md)<br>
+[Ignite](./TryHackMe/Offense/Ignite/Ignite.md)<br>
 
 **HackTheBox:**<br>
 [Starting Point Tier 0](./HackTheBox/StartingPoint/Tier0/Tier0.md)<br>
