@@ -18,6 +18,7 @@ My notes for each CTF challenge I complete.
 [Ignite](./TryHackMe/Offense/Ignite/Ignite.md)<br>
 [Wgel CTF](./TryHackMe/Offense/WgelCTF/WgelCTF.md)<br>
 [Startup](./TryHackMe/Offense/Startup/Startup.md)<br>
+[Lian_Yu](./TryHackMe/Offense/Lian_Yu/Lian_Yu.md)<br>
 
 **HackTheBox:**<br>
 [Starting Point Tier 0](./HackTheBox/StartingPoint/Tier0/Tier0.md)<br>
