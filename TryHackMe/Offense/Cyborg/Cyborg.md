@@ -22,7 +22,7 @@
 -p-: scan all ports
 -T SCAN_SPEED (0-5)
 ```
-nmap -sC -sV -p- -T 5 10.10.229.132
+nmap -sC -sV -p- -T5 10.10.229.132
 ```
 
 ![1.1](./imgs/1.1.png)
