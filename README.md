@@ -21,6 +21,7 @@ My notes for each CTF challenge I complete.
 [Lian_Yu](./TryHackMe/Offense/Lian_Yu/Lian_Yu.md)<br>
 [Cyborg](./TryHackMe/Offense/Cyborg/Cyborg.md)<br>
 [Easy Peasy](./TryHackMe/Offense/EasyPeasy/EasyPeasy.md)<br>
+[ToolsRUs](./TryHackMe/Offense/ToolsRUs/ToolsRUs.md)<br>
 
 **HackTheBox:**<br>
 [Starting Point Tier 0](./HackTheBox/StartingPoint/Tier0/Tier0.md)<br>
