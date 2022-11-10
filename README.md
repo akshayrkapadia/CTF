@@ -34,7 +34,7 @@ My notes for each CTF challenge I complete.
 
 **TryHackMe:**<br>
 [Carnage](./TryHackMe/Defense/Carnage/Carnage.md)<br>
-
+[Snort](./TryHackMe/Defense/SOCLevel1/Snort/Snort.md)<br>
 
 ## Reverse Engineering
 
