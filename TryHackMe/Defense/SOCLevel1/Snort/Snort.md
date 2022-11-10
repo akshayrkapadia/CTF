@@ -26,28 +26,28 @@ Similar to tcpdump
 sudo -v -i eth0
 ```
 
-![1.1](./imgs/1.1)
+![1.1](./imgs/1.1.png)
 
 -d: display packet data<br>
 ```
 sudo -d -i eth0
 ```
 
-![1.2](./imgs/1.2)
+![1.2](./imgs/1.2.png)
 
 -e: display link-layer headers<b>
 ```
 sudo -de -i eth0
 ```
 
-![1.3](./imgs/1.3)
+![1.3](./imgs/1.3.png)
 
 -X: display full packet details in HEX<br>
 ```
 sudo -X -i eth0
 ```
 
-![1.4](./imgs/1.4)
+![1.4](./imgs/1.4.png)
 
 
 ## PACKET LOGGER MODE
@@ -95,7 +95,7 @@ sudo snort -dev -K ACSII -l .
 sudo snort -c /etc/snort/snort.conf -A console
 ```
 
-![2.1](./imgs/2.1)
+![2.1](./imgs/2.1.png)
 
 full and fast don't give console output but instead generate alert log file
 
@@ -103,7 +103,7 @@ full and fast don't give console output but instead generate alert log file
 sudo snort -c /etc/snort/snort.conf -A cmg
 ```
 
-![2.2](./imgs/2.2)
+![2.2](./imgs/2.2.png)
 
 ### IPS
 
@@ -122,13 +122,13 @@ sudo snort -c /etc/snort/snort.conf -q -Q --daq afpacket -i eth0:eth1 -A console
 sudo snort -c /etc/snort/snort.conf -q -r PCAP_FILE -A console -n 10
 ```
 
-![3.1](./imgs/3.1)
+![3.1](./imgs/3.1.png)
 
 ## SNORT RULES
 
 Stored in /etc/snort/rules/local.rules
 
-![4.1](./imgs/4.1)
+![4.1](./imgs/4.1.png)
 
 ### Specifying IP
 ```
