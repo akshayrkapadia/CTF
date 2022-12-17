@@ -23,6 +23,7 @@ My notes for each CTF challenge I complete.
 [Easy Peasy](./TryHackMe/Offense/EasyPeasy/EasyPeasy.md)<br>
 [ToolsRUs](./TryHackMe/Offense/ToolsRUs/ToolsRUs.md)<br>
 [Skynet](./TryHackMe/Offense/Skynet/Skynet.md)<br>
+[Anonymous](./TryHackMe/Offense/Anonymous/Anonymous.md)<br>
 
 **HackTheBox:**<br>
 [Starting Point Tier 0](./HackTheBox/StartingPoint/Tier0/Tier0.md)<br>
