@@ -26,6 +26,7 @@ My notes for each CTF challenge I complete.
 [Anonymous](./TryHackMe/Offense/Anonymous/Anonymous.md)<br>
 [Boiler CTF](./TryHackMe/Offense/BoilerCTF/BoilerCTF.md)<br>
 [UltraTech](./TryHackMe/Offense/UltraTech/UltraTech.md)<br>
+[Chill Hack](./TryHackMe/Offense/ChillHack/ChillHack.md)<br>
 
 **HackTheBox:**<br>
 [Starting Point Tier 0](./HackTheBox/StartingPoint/Tier0/Tier0.md)<br>
