@@ -16,8 +16,6 @@
 nmap -sV -p- 10.10.248.157
 ```
 
-![1.1](./imgs/1.1.png)
-
 **EXPOSED PORT (SERVICE)**:<br>
     21 (ftp vsftpd 3.0.3)<br>
     22 (ssh OpenSSH 7.6p1),<br>
